@@ -6,52 +6,52 @@ softdepend: [Multiverse-Core, Citizens, Essentials, EssentialsSpawn, ProtocolLib
 api-version: 1.13
 commands:
   login:
-    description: ä½¿ç”¨å¯†ç ç™»å½•
-    usage: /<command> å¯†ç 
+    description: Ê¹ÓÃÃÜÂëµÇÂ¼
+    usage: /<command> ÃÜÂë
     aliases: [l]
   register:
-    description: æ³¨å†Œå¯†ç 
-    usage: /<command> å¯†ç  é‡å¤å¯†ç 
+    description: ×¢²áÃÜÂë
+    usage: /<command> ÃÜÂë ÖØ¸´ÃÜÂë
     aliases: [reg]
   bindemail:
-    description: ç»‘å®šé‚®ç®±,é‡ç½®å¯†ç 
+    description: °ó¶¨ÓÊÏä,ÖØÖÃÃÜÂë
     usage:
       |
-      /<command> set é‚®ç®±
-      /<command> verify éªŒè¯ç 
+      /<command> set ÓÊÏä
+      /<command> verify ÑéÖ¤Âë
     aliases: [bdmail]
   resetpassword:
-    description: å¿˜è®°å¯†ç ,é‡ç½®å¯†ç 
+    description: Íü¼ÇÃÜÂë,ÖØÖÃÃÜÂë
     usage:
       |
       /<command> forget
-      /<command> re éªŒè¯ç  æ–°å¯†ç 
+      /<command> re ÑéÖ¤Âë ĞÂÃÜÂë
     aliases: [repw]
   changepassword:
-    description: ä¿®æ”¹å¯†ç 
-    usage: /<command> æ—§å¯†ç  æ–°å¯†ç  é‡å¤æ–°å¯†ç 
+    description: ĞŞ¸ÄÃÜÂë
+    usage: /<command> ¾ÉÃÜÂë ĞÂÃÜÂë ÖØ¸´ĞÂÃÜÂë
     aliases: [changepw]
   catseedlogin:
-    description: ç®¡ç†å‘˜ç®¡ç†æŒ‡ä»¤
+    description: ¹ÜÀíÔ±¹ÜÀíÖ¸Áî
     usage:
       |
-      Â§dÂ§lCatSeedLogin ç®¡ç†æŒ‡ä»¤:
-      Â§a/<command> commandWhiteListAdd [æŒ‡ä»¤] Â§9æ·»åŠ ç™»é™†ä¹‹å‰å…è®¸æ‰§è¡Œçš„æŒ‡ä»¤ (æ”¯æŒæ­£åˆ™è¡¨è¾¾å¼)
-      Â§a/<command> commandWhiteListDel [æŒ‡ä»¤] Â§9åˆ é™¤ç™»é™†ä¹‹å‰å…è®¸æ‰§è¡Œçš„æŒ‡ä»¤ (æ”¯æŒæ­£åˆ™è¡¨è¾¾å¼)
-      Â§a/<command> commandWhiteListInfo Â§9æŸ¥çœ‹ç™»é™†ä¹‹å‰å…è®¸æ‰§è¡Œçš„æŒ‡ä»¤ (æ”¯æŒæ­£åˆ™è¡¨è¾¾å¼)
-      Â§b/<command> setIpRegCountLimit [æ•°é‡] Â§9è®¾ç½®ç›¸åŒipæ³¨å†Œé™åˆ¶ ï¼ˆé»˜è®¤æ•°é‡2ï¼‰
-      Â§b/<command> setIpCountLimit [æ•°é‡] Â§9è®¾ç½®ç›¸åŒipç™»å½•é™åˆ¶ ï¼ˆé»˜è®¤æ•°é‡2ï¼‰
-      Â§b/<command> setIdLength [æœ€çŸ­] [æœ€é•¿] Â§9è®¾ç½®æ¸¸æˆåæœ€å°å’Œæœ€å¤§é•¿åº¦ (é»˜è®¤æœ€å°æ˜¯2 æœ€å¤§æ˜¯15)
-      Â§b/<command> setReenterInterval [é—´éš”] Â§9ç¦»å¼€æœåŠ¡å™¨é‡æ–°è¿›å…¥é—´éš”é™åˆ¶ å•ä½ï¼štick (1ç§’ç­‰äº20tick) (é»˜è®¤60tick)
-      Â§b/<command> setAutoKick [ç§’æ•°] Â§9è®¾ç½®è‡ªåŠ¨è¸¢å‡ºæœªç™»å½•çš„ç©å®¶ (é»˜è®¤120ç§’ï¼Œå°äº1ç§’åˆ™å…³é—­æ­¤åŠŸèƒ½)
-      Â§b/<command> setSpawnLocation Â§9è®¾ç½®ç©å®¶ç™»é™†åœ°ç‚¹ä¸ºä½ ç«™ç€çš„ä½ç½® (é»˜è®¤ç™»é™†åœ°ç‚¹ä¸ºworldä¸–ç•Œçš„å‡ºç”Ÿç‚¹)
-      Â§c/<command> limitChineseID  Â§9æ‰“å¼€/å…³é—­ é™åˆ¶ä¸­æ–‡æ¸¸æˆå (é»˜è®¤æ‰“å¼€)
-      Â§c/<command> beforeLoginNoDamage Â§9æ‰“å¼€/å…³é—­ ç™»é™†ä¹‹å‰æ˜¯å¦å—åˆ°ä¼¤å®³ (é»˜è®¤ç™»é™†ä¹‹å‰ä¸å—åˆ°ä¼¤å®³)
-      Â§c/<command> afterLoginBack Â§9æ‰“å¼€/å…³é—­ ç™»é™†ä¹‹åæ˜¯å¦è¿”å›é€€å‡ºåœ°ç‚¹ (é»˜è®¤æ‰“å¼€)
-      Â§c/<command> canTpSpawnLocation Â§9æ‰“å¼€/å…³é—­ ç™»å½•ä¹‹å‰æ˜¯å¦å¼ºåˆ¶åœ¨ç™»é™†åœ°ç‚¹ (é»˜è®¤æ‰“å¼€)
-      Â§c/<command> deathStateQuitRecordLocation Â§9æ‰“å¼€/å…³é—­ æ­»äº¡çŠ¶æ€é€€å‡ºæ¸¸æˆè®°å½•é€€å‡ºä½ç½® (é»˜è®¤æ‰“å¼€)
-      Â§e/<command> delPlayer [ç©å®¶å] Â§9ç®¡ç†å‘˜å¼ºåˆ¶åˆ é™¤è´¦æˆ·
-      Â§e/<command> setPwd [ç©å®¶å] [å¯†ç ] Â§9ç®¡ç†å‘˜å¼ºåˆ¶è®¾ç½®ç©å®¶å¯†ç 
-      Â§3/<command> reload Â§9é‡è½½é…ç½®æ–‡ä»¶
+      ¡ìd¡ìlCatSeedLogin ¹ÜÀíÖ¸Áî:
+      ¡ìa/<command> commandWhiteListAdd [Ö¸Áî] ¡ì9Ìí¼ÓµÇÂ½Ö®Ç°ÔÊĞíÖ´ĞĞµÄÖ¸Áî (Ö§³ÖÕıÔò±í´ïÊ½)
+      ¡ìa/<command> commandWhiteListDel [Ö¸Áî] ¡ì9É¾³ıµÇÂ½Ö®Ç°ÔÊĞíÖ´ĞĞµÄÖ¸Áî (Ö§³ÖÕıÔò±í´ïÊ½)
+      ¡ìa/<command> commandWhiteListInfo ¡ì9²é¿´µÇÂ½Ö®Ç°ÔÊĞíÖ´ĞĞµÄÖ¸Áî (Ö§³ÖÕıÔò±í´ïÊ½)
+      ¡ìb/<command> setIpRegCountLimit [ÊıÁ¿] ¡ì9ÉèÖÃÏàÍ¬ip×¢²áÏŞÖÆ £¨Ä¬ÈÏÊıÁ¿2£©
+      ¡ìb/<command> setIpCountLimit [ÊıÁ¿] ¡ì9ÉèÖÃÏàÍ¬ipµÇÂ¼ÏŞÖÆ £¨Ä¬ÈÏÊıÁ¿2£©
+      ¡ìb/<command> setIdLength [×î¶Ì] [×î³¤] ¡ì9ÉèÖÃÓÎÏ·Ãû×îĞ¡ºÍ×î´ó³¤¶È (Ä¬ÈÏ×îĞ¡ÊÇ2 ×î´óÊÇ15)
+      ¡ìb/<command> setReenterInterval [¼ä¸ô] ¡ì9Àë¿ª·şÎñÆ÷ÖØĞÂ½øÈë¼ä¸ôÏŞÖÆ µ¥Î»£ºtick (1ÃëµÈÓÚ20tick) (Ä¬ÈÏ60tick)
+      ¡ìb/<command> setAutoKick [ÃëÊı] ¡ì9ÉèÖÃ×Ô¶¯Ìß³öÎ´µÇÂ¼µÄÍæ¼Ò (Ä¬ÈÏ120Ãë£¬Ğ¡ÓÚ1ÃëÔò¹Ø±Õ´Ë¹¦ÄÜ)
+      ¡ìb/<command> setSpawnLocation ¡ì9ÉèÖÃÍæ¼ÒµÇÂ½µØµãÎªÄãÕ¾×ÅµÄÎ»ÖÃ (Ä¬ÈÏµÇÂ½µØµãÎªworldÊÀ½çµÄ³öÉúµã)
+      ¡ìc/<command> limitChineseID  ¡ì9´ò¿ª/¹Ø±Õ ÏŞÖÆÖĞÎÄÓÎÏ·Ãû (Ä¬ÈÏ´ò¿ª)
+      ¡ìc/<command> beforeLoginNoDamage ¡ì9´ò¿ª/¹Ø±Õ µÇÂ½Ö®Ç°ÊÇ·ñÊÜµ½ÉËº¦ (Ä¬ÈÏµÇÂ½Ö®Ç°²»ÊÜµ½ÉËº¦)
+      ¡ìc/<command> afterLoginBack ¡ì9´ò¿ª/¹Ø±Õ µÇÂ½Ö®ºóÊÇ·ñ·µ»ØÍË³öµØµã (Ä¬ÈÏ´ò¿ª)
+      ¡ìc/<command> canTpSpawnLocation ¡ì9´ò¿ª/¹Ø±Õ µÇÂ¼Ö®Ç°ÊÇ·ñÇ¿ÖÆÔÚµÇÂ½µØµã (Ä¬ÈÏ´ò¿ª)
+      ¡ìc/<command> deathStateQuitRecordLocation ¡ì9´ò¿ª/¹Ø±Õ ËÀÍö×´Ì¬ÍË³öÓÎÏ·¼ÇÂ¼ÍË³öÎ»ÖÃ (Ä¬ÈÏ´ò¿ª)
+      ¡ìe/<command> delPlayer [Íæ¼ÒÃû] ¡ì9¹ÜÀíÔ±Ç¿ÖÆÉ¾³ıÕË»§
+      ¡ìe/<command> setPwd [Íæ¼ÒÃû] [ÃÜÂë] ¡ì9¹ÜÀíÔ±Ç¿ÖÆÉèÖÃÍæ¼ÒÃÜÂë
+      ¡ì3/<command> reload ¡ì9ÖØÔØÅäÖÃÎÄ¼ş
     aliases: [cslogin]
     permission: catseedlogin.command.catseedlogin
