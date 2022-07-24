@@ -4,4 +4,4 @@ EmailPassword: "123456"
 EmailSmtpHost: "smtp.qq.com"
 EmailSmtpPort: "465"
 SSLAuthVerify: true
-FromPersonal: "xxx·þÎñÆ÷"
+FromPersonal: "xxx-server"
