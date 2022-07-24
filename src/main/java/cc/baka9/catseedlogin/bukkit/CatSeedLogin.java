@@ -9,6 +9,7 @@ import cc.baka9.catseedlogin.bukkit.object.LoginPlayerHelper;
 import cc.baka9.catseedlogin.bukkit.task.Task;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
@@ -118,14 +119,15 @@ public class CatSeedLogin extends JavaPlugin {
     @Override
     public void onDisable(){
         Task.cancelAll();
-        Bukkit.getOnlinePlayers().forEach(p -> {
+
+        Player[] players = Bukkit.getOnlinePlayers();
+        for (Player p : players) {
             if (!LoginPlayerHelper.isLogin(p.getName())) return;
             if (!p.isDead() || Config.Settings.DeathStateQuitRecordLocation) {
                 Config.setOfflineLocation(p);
             }
-
-        });
-        try {
+        }
+            try {
             sql.getConnection().close();
         } catch (Exception e) {
             getLogger().warning("获取数据库连接时出错");

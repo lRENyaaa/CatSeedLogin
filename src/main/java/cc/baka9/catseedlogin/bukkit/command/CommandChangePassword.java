@@ -56,7 +56,7 @@ public class CommandChangePassword implements CommandExecutor {
                 LoginPlayerHelper.remove(lp);
 
                 Bukkit.getScheduler().runTask(CatSeedLogin.instance, () -> {
-                    Player player = Bukkit.getPlayer(((Player) sender).getUniqueId());
+                    Player player = Bukkit.getPlayer(((Player) sender).getName());
                     if (player != null && player.isOnline()) {
                         player.sendMessage(Config.Language.CHANGEPASSWORD_SUCCESS);
                         Config.setOfflineLocation(player);

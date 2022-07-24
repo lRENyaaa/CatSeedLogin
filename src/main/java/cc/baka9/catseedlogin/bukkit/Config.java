@@ -224,7 +224,7 @@ public class Config {
 
     // 获取插件jar包中的配置文件
     public static FileConfiguration getResourceConfig(String yamlFileName){
-        return YamlConfiguration.loadConfiguration(new InputStreamReader(plugin.getResource(yamlFileName), StandardCharsets.UTF_8));
+        return YamlConfiguration.loadConfiguration(plugin.getResource(yamlFileName));
     }
 
     public static void load(){

@@ -95,7 +95,7 @@ public class CommandBindEmail implements CommandExecutor {
                                 lp.setEmail(bindEmail.getEmail());
                                 CatSeedLogin.sql.edit(lp);
                                 Bukkit.getScheduler().runTask(CatSeedLogin.instance, () -> {
-                                    Player syncPlayer = Bukkit.getPlayer(((Player) sender).getUniqueId());
+                                    Player syncPlayer = Bukkit.getPlayer(((Player) sender).getName());
                                     if (syncPlayer != null && syncPlayer.isOnline()) {
                                         syncPlayer.sendMessage("§a邮箱已绑定 " + bindEmail.getEmail() + " 忘记密码时可以用邮箱重置自己的密码");
                                         EmailCode.removeByName(name, EmailCode.Type.Bind);

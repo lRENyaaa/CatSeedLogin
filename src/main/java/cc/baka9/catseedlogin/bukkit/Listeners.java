@@ -12,7 +12,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.*;
@@ -101,7 +100,7 @@ public class Listeners implements Listener {
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event){
         if (!(event.getDamager() instanceof Player)) return;
         if (playerIsNotMinecraftPlayer((Player) event.getDamager())) return;
-        if (LoginPlayerHelper.isLogin(event.getDamager().getName())) return;
+        if (LoginPlayerHelper.isLogin(((Player) event.getDamager()).getName())) return;
         event.setCancelled(true);
     }
 
@@ -112,7 +111,7 @@ public class Listeners implements Listener {
 
             Entity entity = event.getEntity();
             if (entity instanceof Player && !playerIsNotMinecraftPlayer((Player) entity)) {
-                if (!LoginPlayerHelper.isLogin(entity.getName())) {
+                if (!LoginPlayerHelper.isLogin(((Player) entity).getName())) {
                     event.setCancelled(true);
                 }
 
@@ -138,13 +137,13 @@ public class Listeners implements Listener {
     }
 
     @EventHandler
-    public void onEntityPickupItem(EntityPickupItemEvent event){
-        if (!(event.getEntity() instanceof Player)) return;
-        Player player = (Player) event.getEntity();
+    public void aaa(PlayerPickupItemEvent event){
+        Player player = event.getPlayer();
         if (playerIsNotMinecraftPlayer(player)) return;
         if (LoginPlayerHelper.isLogin(player.getName())) return;
         event.setCancelled(true);
     }
+
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event){
